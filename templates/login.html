@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Log in — CareerPilot AI{% endblock %}
+{% block content %}
+<section class="auth-layout"><div class="auth-side"><span class="eyebrow">WELCOME BACK</span><h1>Pick up where<br><span class="gradient-text">you left off.</span></h1><p>Your career toolkit is ready when you are.</p><div class="auth-benefit"><span>✓</span><div><b>Resume history</b><small>Review past analyses and reports.</small></div></div><div class="auth-benefit"><span>✓</span><div><b>Application progress</b><small>Keep track of your next steps.</small></div></div></div>
+<div class="auth-card"><div class="auth-card-head"><span class="eyebrow">YOUR WORKSPACE</span><h2>Welcome back</h2><p>Log in to continue your journey.</p></div><form method="post" class="form-stack"><label>Email address<input type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label><label>Password<input type="password" name="password" required autocomplete="current-password" placeholder="Your password"></label><button class="button button-full" type="submit">Log in <span>↗</span></button></form><p class="auth-switch">New to CareerPilot? <a href="{{ url_for('register') }}">Create account</a></p></div></section>
+{% endblock %}

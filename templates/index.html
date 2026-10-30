@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}CareerPilot AI — Your next career move{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse-dot"></span> YOUR PERSONAL CAREER WORKSPACE</div>
+    <h1>Make your next move<br><span class="gradient-text">your best one.</span></h1>
+    <p class="hero-subtitle">Turn your resume into a clearer career story. Analyze your strengths, match skills to a role, prepare for interviews, and keep every application organized.</p>
+    <div class="hero-actions"><a class="button" href="{{ url_for('register') }}">Create free account <span>↗</span></a><a class="button button-ghost" href="{{ url_for('login') }}">I already have an account</a></div>
+    <div class="trust-row"><span><i>✓</i> Free core tools</span><span><i>✓</i> Private account history</span><span><i>✓</i> Optional AI assistance</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="dashboard-preview">
+      <div class="preview-top"><span class="window-dots"><b></b><b></b><b></b></span><span class="preview-label">CAREER OVERVIEW</span><span class="live-pill">● READY</span></div>
+      <div class="preview-greeting"><span class="mini-label">YOUR PROGRESS</span><h3>Small steps. Better opportunities.</h3></div>
+      <div class="preview-stats">
+        <div class="preview-stat"><span>Resume checklist</span><strong>82<span>/100</span></strong><div class="mini-bar"><i style="width:82%"></i></div></div>
+        <div class="preview-stat"><span>Skill alignment</span><strong>76<span>%</span></strong><div class="mini-bar"><i style="width:76%"></i></div></div>
+      </div>
+      <div class="preview-task"><div class="task-icon">✦</div><div><strong>Next best action</strong><p>Tailor your top project to the target role.</p></div><span class="task-arrow">↗</span></div>
+      <div class="preview-bottom"><span>RESUME LAB</span><span>JOB MATCH</span><span>INTERVIEW PREP</span></div>
+    </div>
+    <div class="float-chip chip-one"><span class="chip-icon">✦</span><span><b>Career clarity</b><small>One step at a time</small></span></div>
+    <div class="float-chip chip-two"><span class="chip-check">✓</span><span><b>Progress saved</b><small>Your personal workspace</small></span></div>
+  </div>
+</section>
+<section class="feature-section">
+  <div class="section-heading"><span class="eyebrow">ONE WORKSPACE, FOUR TOOLS</span><h2>Everything to move forward.</h2><p>Practical tools for students, freshers, and early-career professionals.</p></div>
+  <div class="feature-grid">
+    <article class="feature-card"><div class="feature-icon violet">◈</div><h3>Resume Lab</h3><p>Extract resume text, detect skills, get a transparent checklist score, and download a PDF report.</p><span class="feature-number">01</span></article>
+    <article class="feature-card"><div class="feature-icon blue">⌁</div><h3>Job Match</h3><p>Compare resume skills with a job description and find strengths and gaps to work on.</p><span class="feature-number">02</span></article>
+    <article class="feature-card"><div class="feature-icon pink">✳</div><h3>Interview Prep</h3><p>Practice role-based questions with optional AI guidance or built-in offline questions.</p><span class="feature-number">03</span></article>
+    <article class="feature-card"><div class="feature-icon green">↗</div><h3>Application Tracker</h3><p>Save opportunities and track each one from saved to applied, interview, or offer.</p><span class="feature-number">04</span></article>
+  </div>
+</section>
+<section class="bottom-cta"><div><span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span><h2>Build momentum, not guesswork.</h2></div><a class="button" href="{{ url_for('register') }}">Start for free ↗</a></section>
+{% endblock %}

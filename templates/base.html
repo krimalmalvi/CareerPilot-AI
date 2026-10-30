@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}CareerPilot AI{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <nav class="navbar">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">C</span><span>CareerPilot<span class="brand-ai"> AI</span></span></a>
+    <div class="nav-links">
+      {% if current_user %}
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('analyze') }}">Resume Lab</a>
+        <a href="{{ url_for('interview') }}">Interview Prep</a>
+        <a href="{{ url_for('jobs') }}">Job Tracker</a>
+        <span class="nav-user">{{ current_user.name }}</span>
+        <a class="nav-logout" href="{{ url_for('logout') }}">Log out</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Log in</a>
+        <a class="button button-small" href="{{ url_for('register') }}">Get started</a>
+      {% endif %}
+    </div>
+  </nav>
+  <main class="main-shell">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-stack">
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer"><span>© {{ now_year }} CareerPilot AI</span><span>Build your next move with clarity.</span></footer>
+  <script>
+    document.querySelectorAll('form[data-confirm]').forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        if (!confirm(form.dataset.confirm)) event.preventDefault();
+      });
+    });
+    document.querySelectorAll('[data-file-input]').forEach(function(input) {
+      input.addEventListener('change', function() {
+        const target = document.querySelector(input.dataset.fileInput);
+        if (target) target.textContent = input.files.length ? input.files[0].name : 'Choose a file';
+      });
+    });
+  </script>
+</body>
+</html>
